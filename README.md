@@ -1,4 +1,4 @@
-# Unity-C-2D-RPG
+# Unity C# 2D RPG
 #### Udemy Course - Learn To Create An RPG Game In Unity &amp; C#
 
 <br/>
