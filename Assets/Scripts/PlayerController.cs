@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
 
+    public bool canMove = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,15 +32,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RBObject.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+        if (canMove)
+        {
+            RBObject.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+
+        }
+        else
+        {
+            RBObject.velocity = Vector2.zero;
+        }
 
         myAnim.SetFloat("moveX", RBObject.velocity.x);
         myAnim.SetFloat("moveY", RBObject.velocity.y);
 
-        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            if (canMove)
+            {
+                myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
         }
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x),
