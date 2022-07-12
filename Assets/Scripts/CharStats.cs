@@ -70,7 +70,7 @@ public class CharStats : MonoBehaviour
                 currentHP = maxHP;
 
                 maxMP += mpLvlBonus[playerLevel];
-                currentHP = maxMP;
+                currentMP = maxMP;
             }
         }
 
