@@ -215,4 +215,10 @@ public class GameMenu : MonoBehaviour
     {
         itemCharChoiceMenu.SetActive(false);
     }
+
+    public void UseItem(int selectChar)
+    {
+        activeItem.Use(selectChar);
+        CloseItemCharChoice();
+    }
 }
