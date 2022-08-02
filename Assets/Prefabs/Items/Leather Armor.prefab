@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isItem: 0
   isWeapon: 0
-  isArmor: 0
+  isArmor: 1
   itemName: Leather Armor
   description: Leather Armor
   value: 15
