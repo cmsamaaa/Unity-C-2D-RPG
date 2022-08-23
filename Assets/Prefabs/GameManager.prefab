@@ -113,6 +113,13 @@ MonoBehaviour:
   - {fileID: 7081631765971647542}
   - {fileID: 7081631767231540665}
   - {fileID: 7081631766305151496}
+  gameMenuOpen: 0
+  dialogActive: 0
+  fadingBetweenAreas: 0
+  itemsHeld: []
+  numberOfItems: 
+  referenceItems: []
+  currentGold: 100
 --- !u!1 &7081631766305151498
 GameObject:
   m_ObjectHideFlags: 0
