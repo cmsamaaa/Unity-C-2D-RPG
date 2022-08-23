@@ -15,6 +15,9 @@ public class Shop : MonoBehaviour
 
     public string[] itemsForSale;
 
+    public ItemButton[] buyItemButtons;
+    public ItemButton[] sellItemButtons;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,11 +53,46 @@ public class Shop : MonoBehaviour
     {
         buyMenu.SetActive(true);
         sellMenu.SetActive(false);
+
+        for (int i = 0; i < buyItemButtons.Length; i++)
+        {
+            buyItemButtons[i].buttonValue = i;
+
+            if (itemsForSale[i] != "")
+            {
+                buyItemButtons[i].buttonImage.gameObject.SetActive(true);
+                buyItemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(itemsForSale[i]).itemSprite;
+                buyItemButtons[i].amountText.text = "";
+            }
+            else
+            {
+                buyItemButtons[i].buttonImage.gameObject.SetActive(false);
+                buyItemButtons[i].amountText.text = "";
+            }
+        }
     }
 
     public void OpenSellMenu()
     {
         buyMenu.SetActive(false);
         sellMenu.SetActive(true);
+
+        GameManager.instance.SortItems();
+        for (int i = 0; i < sellItemButtons.Length; i++)
+        {
+            sellItemButtons[i].buttonValue = i;
+
+            if (GameManager.instance.itemsHeld[i] != "")
+            {
+                sellItemButtons[i].buttonImage.gameObject.SetActive(true);
+                sellItemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
+                sellItemButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            }
+            else
+            {
+                sellItemButtons[i].buttonImage.gameObject.SetActive(false);
+                sellItemButtons[i].amountText.text = "";
+            }
+        }
     }
 }
