@@ -85,6 +85,11 @@ public class Shop : MonoBehaviour
         buyMenu.SetActive(false);
         sellMenu.SetActive(true);
 
+        ShowSellItems();
+    }
+
+    private void ShowSellItems()
+    {
         GameManager.instance.SortItems();
         for (int i = 0; i < sellItemButtons.Length; i++)
         {
@@ -118,5 +123,34 @@ public class Shop : MonoBehaviour
         sellItemName.text = selectedItem.itemName;
         sellItemDescription.text = selectedItem.description;
         sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value * .5f).ToString() + "g";
+    }
+
+    public void BuyItem()
+    {
+        if (selectedItem != null)
+        {
+            if (GameManager.instance.currentGold >= selectedItem.value)
+            {
+                GameManager.instance.currentGold -= selectedItem.value;
+
+                GameManager.instance.AddItem(selectedItem.itemName);
+            }
+        }
+
+        goldText.text = GameManager.instance.currentGold.ToString() + "g";
+    }
+
+    public void SellItem()
+    {
+        if (selectedItem != null)
+        {
+            GameManager.instance.currentGold += Mathf.FloorToInt(selectedItem.value * .5f);
+
+            GameManager.instance.RemoveItem(selectedItem.itemName);
+        }
+
+        goldText.text = GameManager.instance.currentGold.ToString() + "g";
+
+        ShowSellItems();
     }
 }
