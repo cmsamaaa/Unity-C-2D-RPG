@@ -237,4 +237,14 @@ public class GameMenu : MonoBehaviour
     {
         AudioManager.instance.PlaySFX(4);
     }
+
+    public void PlayButtonUseItemSound()
+    {
+        AudioManager.instance.PlaySFX(7);
+    }
+
+    public void PlayButtonDiscardItemSound()
+    {
+        AudioManager.instance.PlaySFX(6);
+    }
 }

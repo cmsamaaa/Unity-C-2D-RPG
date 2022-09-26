@@ -873,6 +873,10 @@ PrefabInstance:
       propertyPath: areaToLoad
       value: Town
       objectReference: {fileID: 0}
+    - target: {fileID: 5571743750774370595, guid: 316a4ef7a2b724b44a947a39e6bbe100, type: 3}
+      propertyPath: areaTransitionName
+      value: Shop-1
+      objectReference: {fileID: 0}
     - target: {fileID: 5571743750774370596, guid: 316a4ef7a2b724b44a947a39e6bbe100, type: 3}
       propertyPath: m_Name
       value: Area Exit
