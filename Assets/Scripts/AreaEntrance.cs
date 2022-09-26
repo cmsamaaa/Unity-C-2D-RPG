@@ -13,7 +13,15 @@ public class AreaEntrance : MonoBehaviour
             PlayerController.instance.transform.position = this.transform.position;
 
         UIFade.instance.FadeFromBlack();
-        GameManager.instance.fadingBetweenAreas = false;
+
+        try
+        {
+            GameManager.instance.fadingBetweenAreas = false;
+        }
+        catch
+        {
+            Debug.Log("GameManager has not been loaded...");
+        }
     }
 
     // Update is called once per frame
