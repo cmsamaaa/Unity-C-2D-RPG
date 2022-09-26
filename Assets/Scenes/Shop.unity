@@ -869,6 +869,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5571743750774370595, guid: 316a4ef7a2b724b44a947a39e6bbe100, type: 3}
+      propertyPath: areaToLoad
+      value: Town
+      objectReference: {fileID: 0}
     - target: {fileID: 5571743750774370596, guid: 316a4ef7a2b724b44a947a39e6bbe100, type: 3}
       propertyPath: m_Name
       value: Area Exit
@@ -3015,6 +3019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8154494686763397596, guid: acdda7803fcd80f47867fab4f93993fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acdda7803fcd80f47867fab4f93993fc, type: 3}
 --- !u!1001 &1287377448
@@ -3071,6 +3079,10 @@ PrefabInstance:
     - target: {fileID: 7081631766171591924, guid: 6b9f7c4320bf2a5458c6e764b8fb41f8, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081631766171591924, guid: 6b9f7c4320bf2a5458c6e764b8fb41f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b9f7c4320bf2a5458c6e764b8fb41f8, type: 3}
@@ -3344,5 +3356,9 @@ PrefabInstance:
       propertyPath: theMap
       value: 
       objectReference: {fileID: 869628468}
+    - target: {fileID: 8929770233186092663, guid: 6e8c1f905f96bdf47b941c218a405076, type: 3}
+      propertyPath: musicToPlay
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e8c1f905f96bdf47b941c218a405076, type: 3}

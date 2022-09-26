@@ -12,7 +12,18 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
 
         DontDestroyOnLoad(this.gameObject);
     }
@@ -37,11 +48,14 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(int musicToPlay)
     {
-        StopMusic();
-
-        if (musicToPlay < bgm.Length)
+        if(!bgm[musicToPlay].isPlaying)
         {
-            bgm[musicToPlay].Play();
+            StopMusic();
+
+            if (musicToPlay < bgm.Length)
+            {
+                bgm[musicToPlay].Play();
+            }
         }
     }
 
