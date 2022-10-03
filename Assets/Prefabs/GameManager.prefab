@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a3385c9bcfe444fa0e1cc25cddcf26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Woody_2
+  charName: Ralph
   playerLevel: 3
   currentEXP: 543
   expToNextLevel: 
