@@ -1185,6 +1185,18 @@ MonoBehaviour:
     theEffect: {fileID: 3633653227375724134, guid: 6ea6a1a3374ef4946a2a1388926579a8, type: 3}
   enemyAttackEffect: {fileID: 4463750510678975905, guid: f803e32f517cfea4f82b812193686060, type: 3}
   theDamageNumber: {fileID: 832411054, guid: 809af4a8931cdfa4a803ae6c52e7827b, type: 3}
+  playerName:
+  - {fileID: 1170807519}
+  - {fileID: 767943862}
+  - {fileID: 1044331821}
+  playerHP:
+  - {fileID: 900058871}
+  - {fileID: 1919374584}
+  - {fileID: 1586423713}
+  playerMP:
+  - {fileID: 590131844}
+  - {fileID: 1991102688}
+  - {fileID: 2129114173}
 --- !u!1 &420996052
 GameObject:
   m_ObjectHideFlags: 0
