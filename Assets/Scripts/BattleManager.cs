@@ -24,6 +24,7 @@ public class BattleManager : MonoBehaviour
     public GameObject uiButtonsHolder;
 
     public BattleMove[] movesList;
+    public GameObject enemyAttackEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -218,6 +219,8 @@ public class BattleManager : MonoBehaviour
                 movePower = movesList[i].movePower;
             }
         }
+
+        Instantiate(enemyAttackEffect, activeBattlers[currentTurn].transform.position, activeBattlers[currentTurn].transform.rotation);
 
         DealDamage(selectedTarget, movePower);
     }
