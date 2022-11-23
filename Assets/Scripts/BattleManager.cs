@@ -37,6 +37,8 @@ public class BattleManager : MonoBehaviour
     public GameObject magicMenu;
     public BattleMagicSelect[] magicButtons;
 
+    public BattleNotification battleNotice;
+
     // Start is called before the first frame update
     void Start()
     {
