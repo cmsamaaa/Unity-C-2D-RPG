@@ -88,4 +88,58 @@ public class Item : MonoBehaviour
 
         GameManager.instance.RemoveItem(itemName);
     }
+    public void UseInBattle(int charToUseOn)
+    {
+        string charName = "";
+
+        for (int i = 0; i < GameManager.instance.playerStats.Length; i++)
+        {
+            if (i == charToUseOn)
+            {
+                charName = GameManager.instance.playerStats[i].charName;
+            }
+        }
+
+        Debug.Log(charName);
+        for (int i = 0; i < BattleManager.instance.activeBattlers.Count; i++)
+        {
+            if (charName == BattleManager.instance.activeBattlers[i].charName)
+            {
+                BattleChar selectedChar = BattleManager.instance.activeBattlers[i];
+                Debug.Log("Found Character: " + selectedChar.charName + " has " + selectedChar.currentHP + "hp left");
+                if (isItem)
+                {
+                    if (affectHP)
+                    {
+                        if (selectedChar.currentHP != selectedChar.maxHP)
+                        {
+                            selectedChar.currentHP += amountToChange;
+
+                            if (selectedChar.currentHP > selectedChar.maxHP)
+                            {
+                                selectedChar.currentHP = selectedChar.maxHP;
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogError("You are already on full health");
+                            //didntUse = true;
+                        }
+                    }
+                    if (affectMP)
+                    {
+                        selectedChar.currentMP += amountToChange;
+
+                        if (selectedChar.currentMP > selectedChar.maxMP)
+                        {
+                            selectedChar.currentMP = selectedChar.maxMP;
+                        }
+                    }
+                }
+            }
+            //BattleManager.instance.UpdateUIStats ();
+        }
+        GameManager.instance.RemoveItem(itemName);
+    }
+
 }

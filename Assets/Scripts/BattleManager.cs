@@ -37,6 +37,8 @@ public class BattleManager : MonoBehaviour
     public GameObject magicMenu;
     public BattleMagicSelect[] magicButtons;
 
+    public GameObject itemMenu;
+
     public BattleNotification battleNotice;
 
     public int chanceToFlee = 35;
@@ -377,6 +379,11 @@ public class BattleManager : MonoBehaviour
                 magicButtons[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    public void OpenItemMenu()
+    {
+        itemMenu.SetActive(true);
     }
 
     public void Flee()
