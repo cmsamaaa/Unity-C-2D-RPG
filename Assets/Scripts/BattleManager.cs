@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class BattleManager : MonoBehaviour
     public BattleNotification battleNotice;
 
     public int chanceToFlee = 35;
+
+    public string gameOverScene;
 
     // Start is called before the first frame update
     void Start()
@@ -208,6 +211,7 @@ public class BattleManager : MonoBehaviour
             else
             {
                 // End battle in failure
+                StartCoroutine(GameOverCo());
             }
 
             //battleScene.SetActive(false);
@@ -453,5 +457,14 @@ public class BattleManager : MonoBehaviour
         GameManager.instance.battleActive = false;
 
         AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay);
+    }
+
+    public IEnumerator GameOverCo()
+    {
+        battleActive = false;
+        UIFade.instance.FadeToBlack();
+        yield return new WaitForSeconds(1.5f);
+        battleScene.SetActive(false);
+        SceneManager.LoadScene(gameOverScene);
     }
 }

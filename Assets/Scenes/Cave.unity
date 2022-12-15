@@ -5066,6 +5066,7 @@ MonoBehaviour:
   currentTurn: 0
   turnWaiting: 0
   uiButtonsHolder: {fileID: 1801458315}
+  statsHolder: {fileID: 1286934703}
   movesList:
   - moveName: Slash
     movePower: 40
@@ -5125,6 +5126,7 @@ MonoBehaviour:
   itemMenu: {fileID: 362545060}
   battleNotice: {fileID: 150819184}
   chanceToFlee: 35
+  gameOverScene: GameOver
 --- !u!114 &393152627
 MonoBehaviour:
   m_ObjectHideFlags: 0
