@@ -24,6 +24,7 @@ public class BattleManager : MonoBehaviour
     public bool turnWaiting;
 
     public GameObject uiButtonsHolder;
+    public GameObject statsHolder;
 
     public BattleMove[] movesList;
     public GameObject enemyAttackEffect;
@@ -88,7 +89,9 @@ public class BattleManager : MonoBehaviour
 
     public void BattleStart(string[] enemiesToSpawn)
     {
-        if(!battleActive)
+        statsHolder.SetActive(true);
+
+        if (!battleActive)
         {
             battleActive = true;
 
@@ -423,6 +426,7 @@ public class BattleManager : MonoBehaviour
     {
         battleActive = false;
         uiButtonsHolder.SetActive(false);
+        statsHolder.SetActive(false);
         targetMenu.SetActive(false);
         magicMenu.SetActive(false);
         itemMenu.SetActive(false);
@@ -462,6 +466,7 @@ public class BattleManager : MonoBehaviour
     public IEnumerator GameOverCo()
     {
         battleActive = false;
+        statsHolder.SetActive(false);
         UIFade.instance.FadeToBlack();
         yield return new WaitForSeconds(1.5f);
         battleScene.SetActive(false);
