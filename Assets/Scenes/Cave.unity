@@ -9211,6 +9211,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6198217851873459349, guid: 08646895b5107ae4c96066189553b68b, type: 3}
+      propertyPath: rewardXP
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198217851873459349, guid: 08646895b5107ae4c96066189553b68b, type: 3}
+      propertyPath: rewardItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198217851873459349, guid: 08646895b5107ae4c96066189553b68b, type: 3}
+      propertyPath: rewardItems.Array.data[0]
+      value: Wooden Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198217851873459349, guid: 08646895b5107ae4c96066189553b68b, type: 3}
+      propertyPath: rewardItems.Array.data[1]
+      value: Iron Armor
+      objectReference: {fileID: 0}
     - target: {fileID: 6198217851873459350, guid: 08646895b5107ae4c96066189553b68b, type: 3}
       propertyPath: m_RootOrder
       value: 5
