@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4638947201613613437}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.1284676, y: 0.028406262, z: 3.1218455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -111,3 +111,6 @@ MonoBehaviour:
   wpnPower: 0
   armrPower: 0
   hasdDied: 0
+  theSprite: {fileID: 4638947201613613436}
+  deadSprite: {fileID: -1808220787, guid: 1f8a76d57268ffb4696110a92349a912, type: 3}
+  aliveSprite: {fileID: -1649331020, guid: 1f8a76d57268ffb4696110a92349a912, type: 3}
