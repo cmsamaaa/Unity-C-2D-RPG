@@ -103,7 +103,7 @@ MonoBehaviour:
   - Plasma
   - Ice
   charName: Dragon
-  currentHP: 1000
+  currentHP: 5
   maxHP: 1000
   currentMP: 0
   maxMP: 0

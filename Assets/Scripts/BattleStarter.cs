@@ -16,6 +16,9 @@ public class BattleStarter : MonoBehaviour
 
     public bool cannotFlee;
 
+    public bool shouldCompleteQuest;
+    public string QuestToComplete;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,5 +93,8 @@ public class BattleStarter : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        BattleReward.instance.markQuestComplete = shouldCompleteQuest;
+        BattleReward.instance.questToMark = QuestToComplete;
     }
 }
