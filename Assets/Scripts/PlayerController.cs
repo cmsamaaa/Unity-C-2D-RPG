@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,13 +20,20 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         if (instance == null)
+        {
             instance = this;
+        }
         else
         {
             if (instance != this)
                 Destroy(gameObject);
+            else
+            {
+                if (SceneManager.GetActiveScene().name == "Countryside")
+                    this.transform.position = new Vector3(1.5f, -4.5f, 0);
+            }     
         }
-
+        
         DontDestroyOnLoad(gameObject);
     }
 
